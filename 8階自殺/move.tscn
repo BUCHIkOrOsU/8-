@@ -4,6 +4,51 @@
 [ext_resource type="Script" uid="uid://f5w5lpi4agew" path="res://area_2d.gd" id="2_7w0et"]
 [ext_resource type="Texture2D" uid="uid://ctski1glbh7" path="res://5.png" id="3_a3dyd"]
 [ext_resource type="Script" uid="uid://b25c5qigeuoo2" path="res://character_body_2d.gd" id="4_7w0et"]
+[ext_resource type="Texture2D" uid="uid://b6r7v8s6jpgv" path="res://hidari_muki_1.png" id="4_fmmf5"]
+[ext_resource type="Texture2D" uid="uid://b2vb0hyb6vtsr" path="res://hidari_muki_2.png" id="4_iabva"]
+[ext_resource type="Texture2D" uid="uid://cj5rnsgmss5ny" path="res://shomen.png" id="5_fmmf5"]
+[ext_resource type="Texture2D" uid="uid://de2brwr46ghij" path="res://5-2.png" id="6_65tjp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ana05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fmmf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iabva")
+}],
+"loop": true,
+"name": &"hidari_muki",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a3dyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_65tjp")
+}],
+"loop": true,
+"name": &"migi_muki",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fmmf5")
+}],
+"loop": false,
+"name": &"stop_hidari",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fmmf5")
+}],
+"loop": false,
+"name": &"stop_migi",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuul"]
 size = Vector2(180.07886, 911.87317)
@@ -19,10 +64,11 @@ script = ExtResource("1_lcuul")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1985686377]
 script = ExtResource("4_7w0et")
 
-[node name="first person" type="Sprite2D" parent="CharacterBody2D" unique_id=338134124]
+[node name="first_person" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1066835276]
 position = Vector2(58.99997, 504)
 scale = Vector2(0.37041664, 0.31583342)
-texture = ExtResource("3_a3dyd")
+sprite_frames = SubResource("SpriteFrames_ana05")
+animation = &"hidari_muki"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=508116036]
 position = Vector2(56.000004, 504.00003)

@@ -1,20 +1,37 @@
 extends CharacterBody2D
 
 var speed = 700
+var direction = "migi" #方向
+var friction = 1500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
-	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += speed
-		move_and_slide()
+		velocity.x = speed
+		$"first_person".play("migi_muki")
+		direction="migi" #向いている方向
 	
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= speed
-		move_and_slide()
+	elif Input.is_action_pressed("ui_left"):
+		velocity.x = -speed
+		$"first_person".play("hidari_muki")
+		direction="hidari"
+	
+
+	else :
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
+
+		if velocity.x == 0:
+			if direction == "migi":
+				$"first_person".play("stop_migi")	
+
+			elif direction == "hidari":
+				$"first_person".play("stop_hidari")
+
+	move_and_slide()
