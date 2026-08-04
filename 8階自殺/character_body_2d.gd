@@ -3,11 +3,14 @@ extends CharacterBody2D
 var speed = 700
 var direction = "migi" #方向
 var friction = 1500
+@onready var camera: Camera2D = $Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
+	camera.make_current()
+	#camera.zoom = Vector2(1.5, 1.5)
+	camera.position_smoothing_enabled = false
+	camera.offset = Vector2.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
