@@ -1,18 +1,21 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1785848298
+::res://::1786192474
 5-2.png::CompressedTexture2D::7495847883614872501::1785848254::1785848299::1::::<><><>0<>0<>96af7340048650690f328ae65860cb80<>res://.godot/imported/5-2.png-76074ec1124734d53b1d269d5f852c45.ctex::
 5.png::CompressedTexture2D::5315061442680074::1782798874::1782798874::1::::<><><>0<>0<>e79308d9eb805a86a1fbe3263f31b3bf<>res://.godot/imported/5.png-d8eabfb4819dbc68a3ed4acdc14b975c.ctex::
 2026-06-01_21-09-54.png::CompressedTexture2D::743083176678594534::1782799098::1782799099::1::::<><><>0<>0<>5a97d5a2616a12d259d7eb0999c1a010<>res://.godot/imported/2026-06-01_21-09-54.png-c17338a5ae0eaee71df40c89c6511783.ctex::
-area_2d.gd::GDScript::414265499801126342::1784009807::0::1::::<>Area2D<><>0<>0<><>::
-character_body_2d.gd::GDScript::4343626655355246799::1785848254::0::1::::<>CharacterBody2D<><>0<>0<><>::
+area_2d2.gd::GDScript::7540664121802054461::1785855639::0::1::::<>Area2D<><>0<>0<><>::
+area_2d.gd::GDScript::414265499801126342::1785853078::0::1::::<>Area2D<><>0<>0<><>::
+character_body_2d.gd::GDScript::4343626655355246799::1785849793::0::1::::<>CharacterBody2D<><>0<>0<><>::
+global.gd::GDScript::6201017521322518421::1785855639::0::1::::<>Node<><>0<>0<><>::
 hidari_muki_1 - コピー (2).png::CompressedTexture2D::1299335621700375032::1785848254::1785848299::1::::<><><>0<>0<>743e1d736fa1ecaee2b17e7b6ab66756<>res://.godot/imported/hidari_muki_1 - コピー (2).png-a624099909fd774b6c892ce1c615eec7.ctex::
 hidari_muki_1.png::CompressedTexture2D::135275043124406101::1785848254::1785848299::1::::<><><>0<>0<>52c89871d36c4a9958ef4ff3f12b6cd0<>res://.godot/imported/hidari_muki_1.png-1a31dcaed4e3316472772a054aa1f363.ctex::
 hidari_muki_2.png::CompressedTexture2D::4324977161422086393::1785848254::1785848299::1::::<><><>0<>0<>6935aba0bd63a2c4680d275f02969b94<>res://.godot/imported/hidari_muki_2.png-1288ca97367335bc899eb0e9d0960828.ctex::
 icon.svg::CompressedTexture2D::7165110523041914274::1782199427::1782199481::1::::<><><>0<>0<>cf8c41d15172e970463742f12bc1be12<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 move2.tscn::PackedScene::6747299463501243884::1785848254::0::1::::<><><>0<>0<><>::uid://bkun68ll621ft::::res://move.gd<>uid://b25c5qigeuoo2::::res://character_body_2d.gd<>uid://b6r7v8s6jpgv::::res://hidari_muki_1.png<>uid://ctski1glbh7::::res://5.png<>uid://f5w5lpi4agew::::res://area_2d.gd<>uid://dac3k87akigx3::::res://icon.svg
-move3.tscn::PackedScene::7189938654685857254::1785848254::0::1::::<><><>0<>0<><>::uid://bkun68ll621ft::::res://move.gd<>uid://b25c5qigeuoo2::::res://character_body_2d.gd<>uid://ctski1glbh7::::res://5.png<>uid://b6r7v8s6jpgv::::res://hidari_muki_1.png<>uid://f5w5lpi4agew::::res://area_2d.gd<>uid://dac3k87akigx3::::res://icon.svg
-move.gd::GDScript::3130443106477347085::1782798933::0::1::::<>Node2D<><>0<>0<><>::
+move3.tscn::PackedScene::7189938654685857254::1785850714::0::1::::<><><>0<>0<><>::uid://bkun68ll621ft::::res://move.gd<>uid://b25c5qigeuoo2::::res://character_body_2d.gd<>uid://ctski1glbh7::::res://5.png<>uid://b6r7v8s6jpgv::::res://hidari_muki_1.png<>uid://f5w5lpi4agew::::res://area_2d.gd<>uid://dac3k87akigx3::::res://icon.svg
+move4.tscn::PackedScene::1891617439706231089::1785856067::0::1::::<><><>0<>0<><>::uid://bkun68ll621ft::::res://move.gd<>uid://b25c5qigeuoo2::::res://character_body_2d.gd<>uid://b6r7v8s6jpgv::::res://hidari_muki_1.png<>uid://ctski1glbh7::::res://5.png<>uid://dfo0vvwlgstxt::::res://area_2d2.gd<>uid://dac3k87akigx3::::res://icon.svg
+move.gd::GDScript::3130443106477347085::1785853629::0::1::::<>Node2D<><>0<>0<><>::
 move.tscn::PackedScene::4132646955648073443::1785848254::0::1::::<><><>0<>0<><>::uid://bkun68ll621ft::::res://move.gd<>uid://f5w5lpi4agew::::res://area_2d.gd<>uid://ctski1glbh7::::res://5.png<>uid://b25c5qigeuoo2::::res://character_body_2d.gd<>uid://b6r7v8s6jpgv::::res://hidari_muki_1.png<>uid://b2vb0hyb6vtsr::::res://hidari_muki_2.png<>uid://cj5rnsgmss5ny::::res://shomen.png<>uid://de2brwr46ghij::::res://5-2.png
 node_2d.gd::GDScript::6427465102727481756::1782199427::0::1::::<>Node2D<><>0<>0<><>::
-node_2d.tscn::PackedScene::9109646505142070114::1782199427::0::1::::<><><>0<>0<><>::uid://cxtrn8k6k4et5::::res://node_2d.gd
+node_2d.tscn::PackedScene::9109646505142070114::1785852656::0::1::::<><><>0<>0<><>::uid://cul238uo8dukj::::res://global.gd
 shomen.png::CompressedTexture2D::5467528652207231226::1785848254::1785848299::1::::<><><>0<>0<>5a6f9a94a393b485ea607b9e9a60836b<>res://.godot/imported/shomen.png-fbabc24ed2c018d8571d420e5add7d2d.ctex::

@@ -32,9 +32,9 @@ func _physics_process(delta: float) -> void:
 
 		if velocity.x == 0:
 			if direction == "migi":
-				$"first_person".play("stop_migi")	
+				$"first_person".play("tomari_migi_muki")	
 
 			elif direction == "hidari":
-				$"first_person".play("stop_hidari")
+				$"first_person".play("tomari_hidari_muki")
 
 	move_and_slide()

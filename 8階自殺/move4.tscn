@@ -15,9 +15,6 @@ animations = [{
 "frames": [{
 "duration": 0.5,
 "texture": ExtResource("3_4a6ja")
-}, {
-"duration": 0.5,
-"texture": ExtResource("4_m1vpg")
 }],
 "loop": false,
 "name": &"hidari_muki",
@@ -26,9 +23,6 @@ animations = [{
 "frames": [{
 "duration": 0.5,
 "texture": ExtResource("4_m1vpg")
-}, {
-"duration": 0.5,
-"texture": ExtResource("3_4a6ja")
 }],
 "loop": false,
 "name": &"migi_muki",
@@ -71,7 +65,7 @@ shape = SubResource("RectangleShape2D_lcuul")
 position = Vector2(74, 522)
 scale = Vector2(0.29950517, 0.2921353)
 sprite_frames = SubResource("SpriteFrames_rli1d")
-animation = &"tomari_migi_muki"
+animation = &"hidari_muki"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1443909617]
 position = Vector2(578, 328)

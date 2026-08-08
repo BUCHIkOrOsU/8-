@@ -1,8 +1,3 @@
-res://move3.tscn
 res://character_body_2d.gd
+res://move3.tscn
 res://move4.tscn
-res://global.gd
-res://node_2d.tscn
-res://area_2d.gd
-res://area_2d2.gd
-res://move.gd
