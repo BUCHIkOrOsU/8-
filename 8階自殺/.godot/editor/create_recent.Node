@@ -1,4 +1,10 @@
 Label
+PanelContainer
+HBoxContainer
+VBoxContainer
+Control
+CanvasLayer
+Button
 CollisionShape2D
 Area2D
 Camera2D
@@ -6,4 +12,3 @@ AnimatedSprite2D
 Sprite2D
 Node2D
 StaticBody2D
-CharacterBody2D
