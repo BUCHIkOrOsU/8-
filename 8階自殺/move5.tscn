@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://17kwsjf7ky2l"]
+[gd_scene format=3 uid="uid://ch1m8g1bolye0"]
 
-[ext_resource type="Script" uid="uid://bkun68ll621ft" path="res://program/move.gd" id="1_im326"]
-[ext_resource type="Script" uid="uid://b25c5qigeuoo2" path="res://program/character_body_2d.gd" id="2_sp47l"]
-[ext_resource type="Texture2D" uid="uid://b6r7v8s6jpgv" path="res://image/hidari_muki_1.png" id="3_4a6ja"]
-[ext_resource type="Texture2D" uid="uid://ctski1glbh7" path="res://image/5.png" id="4_m1vpg"]
-[ext_resource type="Script" uid="uid://f5w5lpi4agew" path="res://program/area_2d.gd" id="5_im326"]
-[ext_resource type="Texture2D" uid="uid://dac3k87akigx3" path="res://image/icon.svg" id="6_bndfi"]
+[ext_resource type="Script" uid="uid://bkun68ll621ft" path="res://program/move.gd" id="1_xt2tv"]
+[ext_resource type="Script" uid="uid://b25c5qigeuoo2" path="res://program/character_body_2d.gd" id="2_grvfy"]
+[ext_resource type="Texture2D" uid="uid://b6r7v8s6jpgv" path="res://image/hidari_muki_1.png" id="3_2wq5o"]
+[ext_resource type="Texture2D" uid="uid://ctski1glbh7" path="res://image/5.png" id="4_xqnnw"]
+[ext_resource type="Script" uid="uid://f5w5lpi4agew" path="res://program/area_2d.gd" id="5_xt2tv"]
+[ext_resource type="Texture2D" uid="uid://dac3k87akigx3" path="res://image/icon.svg" id="6_7jcwn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuul"]
 size = Vector2(180.07886, 845.3823)
@@ -14,7 +14,7 @@ size = Vector2(180.07886, 845.3823)
 animations = [{
 "frames": [{
 "duration": 0.5,
-"texture": ExtResource("3_4a6ja")
+"texture": ExtResource("3_2wq5o")
 }],
 "loop": false,
 "name": &"hidari_muki",
@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 0.5,
-"texture": ExtResource("4_m1vpg")
+"texture": ExtResource("4_xqnnw")
 }],
 "loop": false,
 "name": &"migi_muki",
@@ -30,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_4a6ja")
+"texture": ExtResource("3_2wq5o")
 }],
 "loop": false,
 "name": &"tomari_hidari_muki",
@@ -38,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_m1vpg")
+"texture": ExtResource("4_xqnnw")
 }],
 "loop": false,
 "name": &"tomari_migi_muki",
@@ -49,12 +49,12 @@ animations = [{
 size = Vector2(30, 647)
 
 [node name="move" type="Node2D" unique_id=649597491]
-script = ExtResource("1_im326")
+script = ExtResource("1_xt2tv")
 
 [node name="haikei" type="Sprite2D" parent="." unique_id=2146808367]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1985686377]
-script = ExtResource("2_sp47l")
+script = ExtResource("2_grvfy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=508116036]
 position = Vector2(83, 513)
@@ -72,8 +72,8 @@ position = Vector2(578, 328)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=946956673]
 position = Vector2(39, 60)
-script = ExtResource("5_im326")
-next_scene = "move5.tscn"
+script = ExtResource("5_xt2tv")
+next_scene = "move6.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1124665368]
 position = Vector2(-54, 263)
@@ -84,12 +84,12 @@ position = Vector2(1133, 271)
 shape = SubResource("RectangleShape2D_7w0et")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085315294]
-position = Vector2(502, 200)
-texture = ExtResource("6_bndfi")
+position = Vector2(515, 587)
+texture = ExtResource("6_7jcwn")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1363854496]
 position = Vector2(502, 67)
-texture = ExtResource("6_bndfi")
+texture = ExtResource("6_7jcwn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1574673459]
 

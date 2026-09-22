@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b5t68b1q4q87q"]
+
+[ext_resource type="Script" uid="uid://bkun68ll621ft" path="res://program/move.gd" id="1_c172o"]
+[ext_resource type="Script" uid="uid://d17ckcqkujroy" path="res://program/character_body_2d2.gd" id="2_c172o"]
+[ext_resource type="Texture2D" uid="uid://b6r7v8s6jpgv" path="res://image/hidari_muki_1.png" id="3_2c34k"]
+[ext_resource type="Texture2D" uid="uid://ctski1glbh7" path="res://image/5.png" id="4_j10rt"]
+[ext_resource type="Script" uid="uid://f5w5lpi4agew" path="res://program/area_2d.gd" id="5_d6ipn"]
+[ext_resource type="Texture2D" uid="uid://dac3k87akigx3" path="res://image/icon.svg" id="6_2dus7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuul"]
+size = Vector2(180.07886, 804.2215)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rli1d"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("3_2c34k")
+}],
+"loop": false,
+"name": &"hidari_muki",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("4_j10rt")
+}],
+"loop": false,
+"name": &"migi_muki",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2c34k")
+}],
+"loop": false,
+"name": &"tomari_hidari_muki",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j10rt")
+}],
+"loop": false,
+"name": &"tomari_migi_muki",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w0et"]
+size = Vector2(30, 647)
+
+[node name="move" type="Node2D" unique_id=649597491]
+script = ExtResource("1_c172o")
+
+[node name="haikei" type="Sprite2D" parent="." unique_id=2146808367]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1985686377]
+script = ExtResource("2_c172o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=508116036]
+position = Vector2(98.99994, 507)
+scale = Vector2(0.37041667, 0.31583342)
+shape = SubResource("RectangleShape2D_lcuul")
+
+[node name="first_person" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=502385759]
+position = Vector2(101.00001, 509)
+scale = Vector2(0.2845052, 0.28796867)
+sprite_frames = SubResource("SpriteFrames_rli1d")
+animation = &"migi_muki"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1443909617]
+position = Vector2(569, 322)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=946956673]
+position = Vector2(44, 53)
+script = ExtResource("5_d6ipn")
+next_scene = "move1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1124665368]
+position = Vector2(-54, 263)
+shape = SubResource("RectangleShape2D_7w0et")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1881569569]
+position = Vector2(1118, 275)
+shape = SubResource("RectangleShape2D_7w0et")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085315294]
+position = Vector2(503, 61)
+texture = ExtResource("6_2dus7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1363854496]
+position = Vector2(70, 59)
+texture = ExtResource("6_2dus7")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

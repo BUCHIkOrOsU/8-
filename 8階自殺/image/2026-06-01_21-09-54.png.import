@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6r7v8s6jpgv"
-path="res://.godot/imported/hidari_muki_1.png-1a31dcaed4e3316472772a054aa1f363.ctex"
+uid="uid://kt7qa5doy80q"
+path="res://.godot/imported/2026-06-01_21-09-54.png-297bd5f26d45ec4e96fe5a2c6c434d0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hidari_muki_1.png"
-dest_files=["res://.godot/imported/hidari_muki_1.png-1a31dcaed4e3316472772a054aa1f363.ctex"]
+source_file="res://image/2026-06-01_21-09-54.png"
+dest_files=["res://.godot/imported/2026-06-01_21-09-54.png-297bd5f26d45ec4e96fe5a2c6c434d0f.ctex"]
 
 [params]
 
