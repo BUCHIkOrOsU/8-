@@ -1,11 +1,15 @@
 extends CharacterBody2D
+
 var speed = 700
-var direction = "migi" 
+var direction = "migi"
 var friction = 1500
 @onready var camera: Camera2D = $Camera2D
 
+# 次のエリアのシーンパス（インスペクターからも変更できます）
+@export_file("*.tscn") var next_scene_path: String = "res://move体験版.tscn"
+
 var is_choosing = false
-var choice_index = 0            
+var choice_index = 0
 var choices = ["はい", "いいえ"]
 
 @onready var choice_ui: Control = $"../CanvasLayer/choiceUI"
@@ -85,6 +89,9 @@ func update_choice_display() -> void:
 func confirm_choice() -> void:
 	if choice_index == 0:
 		print("はいが選ばれました")
+		close_choice()
+		Global.fade_out()
+		go_to_next_area()
 	else:
 		print("いいえが選ばれました")
 
@@ -94,3 +101,11 @@ func confirm_choice() -> void:
 func close_choice() -> void:
 	is_choosing = false
 	choice_ui.visible = false
+
+
+func go_to_next_area() -> void:
+	if next_scene_path == "" or not ResourceLoader.exists(next_scene_path):
+		push_error("次のシーンが見つかりません: " + next_scene_path)
+		return
+	# 物理処理中のエラーを避けるため call_deferred で遷移
+	get_tree().call_deferred("change_scene_to_file", next_scene_path)

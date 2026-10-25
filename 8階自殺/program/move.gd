@@ -1,11 +1,17 @@
 extends Node2D
 
+@onready var layer = $CanvasLayer3
+@onready var control = $CanvasLayer3/Control
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	Global.fade_in()
+func _ready():
+	get_tree().paused = true
+	control.finished.connect(_on_opening_finished, CONNECT_ONE_SHOT)
+	layer.tree_exited.connect(_on_layer_removed)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_opening_finished():
+	get_tree().paused = false
+
+
+func _on_layer_removed():
+	get_tree().paused = false

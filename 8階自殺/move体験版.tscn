@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://col2dposno57m"]
+
+[ext_resource type="Script" uid="uid://bkun68ll621ft" path="res://program/move.gd" id="1_gjlw0"]
+[ext_resource type="Texture2D" uid="uid://cqlxyfmpngig2" path="res://image/左停止.png" id="3_a0quo"]
+[ext_resource type="Texture2D" uid="uid://ektuyi1u8uxe" path="res://image/左歩１.png" id="4_of2tc"]
+[ext_resource type="Texture2D" uid="uid://u2nrckjyhht1" path="res://image/左歩２.png" id="5_46eut"]
+[ext_resource type="Texture2D" uid="uid://doug4xtow7yse" path="res://image/右停止.png" id="6_827xr"]
+[ext_resource type="Texture2D" uid="uid://3rp2676lv1fw" path="res://image/右歩１.png" id="7_dfuhi"]
+[ext_resource type="Texture2D" uid="uid://b1pk8thote7gi" path="res://image/スクリーンショット 2026-10-20 151837.png" id="8_83ymj"]
+[ext_resource type="Texture2D" uid="uid://h1et2v8fkwx" path="res://image/右歩２.png" id="8_vc20p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rli1d"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("3_a0quo")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_of2tc")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_46eut")
+}],
+"loop": false,
+"name": &"hidari_muki",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("6_827xr")
+}, {
+"duration": 5.0,
+"texture": ExtResource("7_dfuhi")
+}, {
+"duration": 5.0,
+"texture": ExtResource("8_vc20p")
+}],
+"loop": false,
+"name": &"migi_muki",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a0quo")
+}],
+"loop": false,
+"name": &"tomari_hidari_muki",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_827xr")
+}],
+"loop": false,
+"name": &"tomari_migi_muki",
+"speed": 24.0
+}]
+
+[node name="move" type="Node2D" unique_id=649597491]
+script = ExtResource("1_gjlw0")
+
+[node name="first_person" type="AnimatedSprite2D" parent="." unique_id=502385759]
+position = Vector2(71, 511)
+scale = Vector2(0.036366574, 0.041373786)
+sprite_frames = SubResource("SpriteFrames_rli1d")
+animation = &"migi_muki"
+
+[node name="スクリーンショット20261020151837" type="Sprite2D" parent="." unique_id=993924648]
+z_index = -5
+position = Vector2(581.75, 324.75)
+scale = Vector2(3.0702918, 5.3347106)
+texture = ExtResource("8_83ymj")

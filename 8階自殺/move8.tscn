@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bkun68ll621ft" path="res://program/move.gd" id="1_bxxk5"]
 [ext_resource type="Script" uid="uid://b25c5qigeuoo2" path="res://program/character_body_2d.gd" id="2_8taq5"]
-[ext_resource type="Texture2D" uid="uid://b6r7v8s6jpgv" path="res://image/hidari_muki_1.png" id="3_uisre"]
-[ext_resource type="Texture2D" uid="uid://ctski1glbh7" path="res://image/5.png" id="4_6wy88"]
+[ext_resource type="Texture2D" uid="uid://cqlxyfmpngig2" path="res://image/左停止.png" id="3_kyt57"]
+[ext_resource type="Texture2D" uid="uid://ektuyi1u8uxe" path="res://image/左歩１.png" id="4_otmom"]
 [ext_resource type="Script" uid="uid://f5w5lpi4agew" path="res://program/area_2d.gd" id="5_bxxk5"]
+[ext_resource type="Texture2D" uid="uid://u2nrckjyhht1" path="res://image/左歩２.png" id="5_yylvb"]
 [ext_resource type="Texture2D" uid="uid://dac3k87akigx3" path="res://image/icon.svg" id="6_otmom"]
+[ext_resource type="Texture2D" uid="uid://doug4xtow7yse" path="res://image/右停止.png" id="6_vj2uk"]
+[ext_resource type="Texture2D" uid="uid://3rp2676lv1fw" path="res://image/右歩１.png" id="7_qwbff"]
+[ext_resource type="Texture2D" uid="uid://h1et2v8fkwx" path="res://image/右歩２.png" id="8_rrhsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuul"]
 size = Vector2(180.07886, 845.3823)
@@ -13,40 +17,52 @@ size = Vector2(180.07886, 845.3823)
 [sub_resource type="SpriteFrames" id="SpriteFrames_rli1d"]
 animations = [{
 "frames": [{
-"duration": 0.5,
-"texture": ExtResource("3_uisre")
+"duration": 5.0,
+"texture": ExtResource("3_kyt57")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_otmom")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_yylvb")
 }],
 "loop": false,
 "name": &"hidari_muki",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
-"duration": 0.5,
-"texture": ExtResource("4_6wy88")
+"duration": 5.0,
+"texture": ExtResource("6_vj2uk")
+}, {
+"duration": 5.0,
+"texture": ExtResource("7_qwbff")
+}, {
+"duration": 5.0,
+"texture": ExtResource("8_rrhsl")
 }],
 "loop": false,
 "name": &"migi_muki",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_uisre")
+"texture": ExtResource("3_kyt57")
 }],
 "loop": false,
 "name": &"tomari_hidari_muki",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_6wy88")
+"texture": ExtResource("6_vj2uk")
 }],
 "loop": false,
 "name": &"tomari_migi_muki",
-"speed": 5.0
+"speed": 24.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7w0et"]
-size = Vector2(30, 647)
+size = Vector2(135, 647)
 
 [node name="move" type="Node2D" unique_id=649597491]
 script = ExtResource("1_bxxk5")
@@ -57,13 +73,13 @@ script = ExtResource("1_bxxk5")
 script = ExtResource("2_8taq5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=508116036]
-position = Vector2(83, 513)
+position = Vector2(80, 516)
 scale = Vector2(0.37041667, 0.31583342)
 shape = SubResource("RectangleShape2D_lcuul")
 
 [node name="first_person" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=502385759]
-position = Vector2(74, 522)
-scale = Vector2(0.29950517, 0.2921353)
+position = Vector2(71, 511)
+scale = Vector2(0.036366574, 0.041373786)
 sprite_frames = SubResource("SpriteFrames_rli1d")
 animation = &"hidari_muki"
 
@@ -73,22 +89,22 @@ position = Vector2(578, 328)
 [node name="Area2D" type="Area2D" parent="." unique_id=946956673]
 position = Vector2(39, 60)
 script = ExtResource("5_bxxk5")
-next_scene = "moveTOP.tscn"
+next_scene = "move3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1124665368]
-position = Vector2(-54, 263)
+position = Vector2(-106.5, 263)
 shape = SubResource("RectangleShape2D_7w0et")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1881569569]
-position = Vector2(1133, 271)
+position = Vector2(1183, 267)
 shape = SubResource("RectangleShape2D_7w0et")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085315294]
-position = Vector2(515, 587)
+position = Vector2(75, 70)
 texture = ExtResource("6_otmom")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1363854496]
-position = Vector2(502, 67)
+position = Vector2(210, 18)
 texture = ExtResource("6_otmom")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1574673459]
@@ -128,6 +144,46 @@ text = "はい"
 layout_mode = 2
 
 [node name="nolabel" type="Label" parent="CanvasLayer/choiceUI/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=888494490]
+layout_mode = 2
+text = "いいえ"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=532758016]
+
+[node name="choiceUI" type="Control" parent="CanvasLayer2" unique_id=1882876020]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 493.0
+offset_top = 252.0
+offset_right = 533.0
+offset_bottom = 352.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/choiceUI" unique_id=446458598]
+layout_mode = 0
+offset_top = -56.0
+offset_right = 113.0
+offset_bottom = 50.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer2/choiceUI/VBoxContainer" unique_id=959255436]
+layout_mode = 2
+
+[node name="questionlabel2" type="Label" parent="CanvasLayer2/choiceUI/VBoxContainer/PanelContainer" unique_id=1922994132]
+layout_mode = 2
+text = "上の階に行きますか？"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/choiceUI/VBoxContainer" unique_id=1380633516]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer" unique_id=1110291291]
+layout_mode = 2
+
+[node name="yeslabel2" type="Label" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer/PanelContainer" unique_id=847923021]
+layout_mode = 2
+text = "はい"
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer" unique_id=1548079840]
+layout_mode = 2
+
+[node name="nolabel2" type="Label" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=2112373636]
 layout_mode = 2
 text = "いいえ"
 
