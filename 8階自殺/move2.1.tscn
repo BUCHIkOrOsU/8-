@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b5t68b1q4q87q"]
 
-[ext_resource type="Script" uid="uid://bkun68ll621ft" path="res://program/move.gd" id="1_c172o"]
 [ext_resource type="Script" uid="uid://d17ckcqkujroy" path="res://program/character_body_2d2.gd" id="2_c172o"]
 [ext_resource type="Texture2D" uid="uid://ektuyi1u8uxe" path="res://image/左歩１.png" id="4_2c34k"]
 [ext_resource type="Texture2D" uid="uid://u2nrckjyhht1" path="res://image/左歩２.png" id="5_2dus7"]
@@ -69,7 +68,6 @@ animations = [{
 size = Vector2(30, 647)
 
 [node name="move" type="Node2D" unique_id=649597491]
-script = ExtResource("1_c172o")
 
 [node name="haikei" type="Sprite2D" parent="." unique_id=2146808367]
 

@@ -5,7 +5,6 @@ var direction = "migi"
 var friction = 1500
 @onready var camera: Camera2D = $Camera2D
 
-# 次のエリアのシーンパス（インスペクターからも変更できます）
 @export_file("*.tscn") var next_scene_path: String = "res://move体験版.tscn"
 
 var is_choosing = false

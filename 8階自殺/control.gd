@@ -1,10 +1,5 @@
 extends Control
 
-signal finished
-
-# 項目はすべて任意です
-#   image : 未指定=そのまま / ""=消す / パス=切り替え
-#   se    : 鳴らす効果音のパス
 const PAGES = [
 	{"name": "少女", "text": "ここでいいのかな？"},
 	{
@@ -19,17 +14,16 @@ const PAGES = [
 		"image": "res://image/5-2.png",
 	},
 	{
-		"name":"少女",
-		"text":"行かなきゃ",
+		"name": "少女",
+		"text": "行かなきゃ",
 	},
 ]
 
 @export var chars_per_second := 30.0
-@export var type_se_interval := 2  
 
 var index := -1
 var typing := false
-var last_shown := 0
+var ending := false
 var tween: Tween
 var picture_tween: Tween
 
@@ -43,6 +37,7 @@ var picture_tween: Tween
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true  
 	picture.modulate.a = 0.0
 	next_icon.hide()
 	if bgm_player and bgm_player.stream:
@@ -51,6 +46,9 @@ func _ready():
 
 
 func _input(event):
+	if ending:
+		return
+
 	var clicked = event is InputEventMouseButton \
 			and event.pressed \
 			and event.button_index == MOUSE_BUTTON_LEFT
@@ -82,10 +80,9 @@ func _next_page():
 	_start_typing(page["text"])
 
 
-# ---------- 画像 ----------
 func _update_picture(page: Dictionary):
 	if not page.has("image"):
-		return  
+		return
 
 	if picture_tween:
 		picture_tween.kill()
@@ -94,27 +91,29 @@ func _update_picture(page: Dictionary):
 	var path: String = page["image"]
 	if path == "":
 		picture_tween.tween_property(picture, "modulate:a", 0.0, 0.3)
+	elif not ResourceLoader.exists(path):
+		push_warning("画像が見つかりません: " + path)
 	else:
 		picture_tween.tween_property(picture, "modulate:a", 0.0, 0.15)
 		picture_tween.tween_callback(func(): picture.texture = load(path))
 		picture_tween.tween_property(picture, "modulate:a", 1.0, 0.4)
 
 
-# ---------- 効果音 ----------
 func _play_se(page: Dictionary):
 	var path: String = page.get("se", "")
 	if path == "":
+		return
+	if not ResourceLoader.exists(path):
+		push_warning("効果音が見つかりません: " + path)
 		return
 	se_player.stream = load(path)
 	se_player.play()
 
 
-# ---------- 文字送り ----------
 func _start_typing(text: String):
 	text_label.text = text
 	text_label.visible_ratio = 0.0
 	typing = true
-	last_shown = 0
 
 	var total = text_label.get_total_character_count()
 	var duration = max(total / chars_per_second, 0.01)
@@ -122,17 +121,8 @@ func _start_typing(text: String):
 	if tween:
 		tween.kill()
 	tween = create_tween()
-	tween.tween_method(_on_typing_progress, 0.0, 1.0, duration)
+	tween.tween_property(text_label, "visible_ratio", 1.0, duration)
 	tween.finished.connect(_on_typing_finished)
-
-
-func _on_typing_progress(ratio: float):
-	text_label.visible_ratio = ratio
-
-	# 表示文字数は ratio から自分で計算する(visible_characters に頼らない)
-	var shown = int(ratio * text_label.get_total_character_count())
-	if shown != last_shown:
-		last_shown = shown
 
 
 func _finish_typing():
@@ -147,9 +137,11 @@ func _on_typing_finished():
 	next_icon.show()
 
 
-# ---------- 終了 ----------
 func _end_opening():
-	set_process_input(false)
+	if ending:
+		return
+	ending = true
+
 	if tween:
 		tween.kill()
 
@@ -159,5 +151,5 @@ func _end_opening():
 		t.parallel().tween_property(bgm_player, "volume_db", -40.0, 0.4)
 	await t.finished
 
-	finished.emit()
-	get_parent().queue_free()
+	get_tree().paused = false 
+	get_parent().queue_free() 

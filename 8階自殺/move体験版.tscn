@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://col2dposno57m"]
 
-[ext_resource type="Script" uid="uid://bkun68ll621ft" path="res://program/move.gd" id="1_gjlw0"]
+[ext_resource type="Script" uid="uid://c4fmnnef3dq6u" path="res://move_1.gd" id="1_83ymj"]
 [ext_resource type="Texture2D" uid="uid://cqlxyfmpngig2" path="res://image/左停止.png" id="3_a0quo"]
 [ext_resource type="Texture2D" uid="uid://ektuyi1u8uxe" path="res://image/左歩１.png" id="4_of2tc"]
 [ext_resource type="Texture2D" uid="uid://u2nrckjyhht1" path="res://image/左歩２.png" id="5_46eut"]
@@ -57,7 +57,7 @@ animations = [{
 }]
 
 [node name="move" type="Node2D" unique_id=649597491]
-script = ExtResource("1_gjlw0")
+script = ExtResource("1_83ymj")
 
 [node name="first_person" type="AnimatedSprite2D" parent="." unique_id=502385759]
 position = Vector2(71, 511)
