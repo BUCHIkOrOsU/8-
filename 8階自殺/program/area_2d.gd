@@ -21,7 +21,6 @@ func _ready() -> void:
 		choice2_ui.get_node("VBoxContainer/HBoxContainer/PanelContainer2/nolabel2")
 	]
 	choice2_ui.visible = false
-	body_entered.connect(_on_body_entered)
 
 
 func _on_body_entered(body) -> void:

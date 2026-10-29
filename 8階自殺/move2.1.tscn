@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://3rp2676lv1fw" path="res://image/右歩１.png" id="7_rcdnp"]
 [ext_resource type="Texture2D" uid="uid://cyhaeiu8c526k" path="res://image/部屋.png" id="8_2c34k"]
 [ext_resource type="Texture2D" uid="uid://h1et2v8fkwx" path="res://image/右歩２.png" id="8_khycu"]
-[ext_resource type="Script" uid="uid://cwgg2h4vp4luk" path="res://control.gd" id="12_wm8ix"]
+[ext_resource type="Texture2D" uid="uid://4kidjyioa4vk" path="res://image/kuro.png" id="11_rcdnp"]
+[ext_resource type="Script" uid="uid://cwgg2h4vp4luk" path="res://program/control.gd" id="12_wm8ix"]
 [ext_resource type="Texture2D" uid="uid://hgpogkbxkv11" path="res://image/3.png" id="13_khycu"]
 [ext_resource type="Texture2D" uid="uid://i67vnc3qf5g1" path="res://image/スクリーンショット 2026-10-13 154709.png" id="13_rcdnp"]
-[ext_resource type="Texture2D" uid="uid://dac3k87akigx3" path="res://image/icon.svg" id="14_khycu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuul"]
 size = Vector2(180.07886, 804.2215)
@@ -209,13 +209,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.5
-offset_top = -37.5
-offset_right = 20.0
-offset_bottom = 120.5
+offset_left = -17.5
+offset_top = -317.5
+offset_right = 131.0
+offset_bottom = -159.49997
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("14_khycu")
+scale = Vector2(3.8305473, 3.404771)
+texture = ExtResource("11_rcdnp")
 expand_mode = 1
 stretch_mode = 4
 

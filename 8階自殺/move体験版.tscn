@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3rp2676lv1fw" path="res://image/右歩１.png" id="7_dfuhi"]
 [ext_resource type="Texture2D" uid="uid://b1pk8thote7gi" path="res://image/スクリーンショット 2026-10-20 151837.png" id="8_83ymj"]
 [ext_resource type="Texture2D" uid="uid://h1et2v8fkwx" path="res://image/右歩２.png" id="8_vc20p"]
+[ext_resource type="Script" uid="uid://c2vnxfmiip6kn" path="res://program/control232.gd" id="9_njiam"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rli1d"]
 animations = [{
@@ -70,3 +71,20 @@ z_index = -5
 position = Vector2(581.75, 324.75)
 scale = Vector2(3.0702918, 5.3347106)
 texture = ExtResource("8_83ymj")
+
+[node name="Control" type="Control" parent="." unique_id=2137845722]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_njiam")
+
+[node name="Button" type="Button" parent="Control" unique_id=962561795]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 97.0
+offset_bottom = 72.0
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

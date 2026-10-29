@@ -79,10 +79,10 @@ scale = Vector2(0.37041667, 0.31583342)
 shape = SubResource("RectangleShape2D_lcuul")
 
 [node name="first_person" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=502385759]
-position = Vector2(71, 511)
+position = Vector2(86, 512)
 scale = Vector2(0.036366574, 0.041373786)
 sprite_frames = SubResource("SpriteFrames_rli1d")
-animation = &"hidari_muki"
+animation = &"tomari_migi_muki"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1443909617]
 position = Vector2(578, 328)
@@ -90,7 +90,7 @@ position = Vector2(578, 328)
 [node name="Area2D" type="Area2D" parent="." unique_id=946956673]
 position = Vector2(39, 60)
 script = ExtResource("6_1weqd")
-next_scene = "move4.tscn"
+next_scene = "move12.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1124665368]
 position = Vector2(-106.5, 263)

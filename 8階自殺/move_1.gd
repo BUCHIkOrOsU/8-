@@ -5,5 +5,5 @@ extends Node2D
 func _ready() -> void:
 	Global.fade_in()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

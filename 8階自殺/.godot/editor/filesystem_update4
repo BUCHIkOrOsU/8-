@@ -1,7 +1,5 @@
+res://move12.tscn
+res://move2.1.tscn
+res://program/control.gd
 res://move1.tscn
-res://program/move.gd
-res://move3.tscn
-res://move体験版.tscn
-res://move_1.gd
-res://program/character_body_2d.gd
-res://control.gd
+res://move13.tscn

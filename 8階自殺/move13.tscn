@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://c66l0wlepmwrv"]
+
+[ext_resource type="Script" uid="uid://c4fmnnef3dq6u" path="res://move_1.gd" id="1_18lpv"]
+[ext_resource type="Script" uid="uid://b25c5qigeuoo2" path="res://program/character_body_2d.gd" id="2_ilgih"]
+[ext_resource type="Texture2D" uid="uid://cm4moa3pmy8fo" path="res://image/2左停止.png" id="3_eujla"]
+[ext_resource type="Texture2D" uid="uid://3ngeusg8q7wx" path="res://image/2左歩1.png" id="4_qh6i5"]
+[ext_resource type="Texture2D" uid="uid://burwwa25cj6ti" path="res://image/2左歩2.png" id="5_ehjpa"]
+[ext_resource type="Texture2D" uid="uid://cm1ktemxaufvk" path="res://image/2右停止.png" id="6_n33bt"]
+[ext_resource type="Texture2D" uid="uid://bnou7o87uw4p1" path="res://image/2右歩1.png" id="7_arbsc"]
+[ext_resource type="Texture2D" uid="uid://cn834j45vobsq" path="res://image/2右歩2.png" id="8_x1731"]
+[ext_resource type="Script" uid="uid://f5w5lpi4agew" path="res://program/area_2d.gd" id="9_d8frl"]
+[ext_resource type="Texture2D" uid="uid://cyhaeiu8c526k" path="res://image/部屋.png" id="10_2dhs7"]
+[ext_resource type="Texture2D" uid="uid://cws0dawhdmuok" path="res://image/柵.png" id="11_j0lnp"]
+[ext_resource type="Texture2D" uid="uid://i67vnc3qf5g1" path="res://image/スクリーンショット 2026-10-13 154709.png" id="12_ikkmg"]
+[ext_resource type="AudioStream" uid="uid://dhb7kraa8lbme" path="res://image/名称未設定1.wav" id="13_pn5p7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuul"]
+size = Vector2(180.07886, 845.3823)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rli1d"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("3_eujla")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_qh6i5")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_ehjpa")
+}],
+"loop": false,
+"name": &"hidari_muki",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("6_n33bt")
+}, {
+"duration": 5.0,
+"texture": ExtResource("7_arbsc")
+}, {
+"duration": 5.0,
+"texture": ExtResource("8_x1731")
+}],
+"loop": false,
+"name": &"migi_muki",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eujla")
+}],
+"loop": false,
+"name": &"tomari_hidari_muki",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n33bt")
+}],
+"loop": false,
+"name": &"tomari_migi_muki",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w0et"]
+size = Vector2(135, 647)
+
+[node name="move" type="Node2D" unique_id=649597491]
+script = ExtResource("1_18lpv")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1985686377]
+script = ExtResource("2_ilgih")
+next_scene_path = "uid://cmq0xbt0ms1ye"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=508116036]
+position = Vector2(80, 516)
+scale = Vector2(0.37041667, 0.31583342)
+shape = SubResource("RectangleShape2D_lcuul")
+
+[node name="first_person" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=502385759]
+position = Vector2(82, 524.4072)
+scale = Vector2(0.021207178, 0.020013858)
+sprite_frames = SubResource("SpriteFrames_rli1d")
+animation = &"tomari_migi_muki"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1443909617]
+position = Vector2(578, 328)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=946956673]
+position = Vector2(39, 60)
+script = ExtResource("9_d8frl")
+next_scene = "res://move体験版2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1124665368]
+position = Vector2(-106.5, 263)
+shape = SubResource("RectangleShape2D_7w0et")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1881569569]
+position = Vector2(5305, 264)
+shape = SubResource("RectangleShape2D_7w0et")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1574673459]
+
+[node name="choiceUI" type="Control" parent="CanvasLayer" unique_id=1343506114]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 493.0
+offset_top = 312.0
+offset_right = 533.0
+offset_bottom = 352.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/choiceUI" unique_id=735951796]
+layout_mode = 0
+offset_top = -56.0
+offset_right = 113.0
+offset_bottom = 50.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/choiceUI/VBoxContainer" unique_id=1152427008]
+layout_mode = 2
+
+[node name="questionlabel" type="Label" parent="CanvasLayer/choiceUI/VBoxContainer/PanelContainer" unique_id=1873020560]
+layout_mode = 2
+text = "飛び降りますか？"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/choiceUI/VBoxContainer" unique_id=43361871]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/choiceUI/VBoxContainer/HBoxContainer" unique_id=909165269]
+layout_mode = 2
+
+[node name="yeslabel" type="Label" parent="CanvasLayer/choiceUI/VBoxContainer/HBoxContainer/PanelContainer" unique_id=510557279]
+layout_mode = 2
+text = "はい"
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/choiceUI/VBoxContainer/HBoxContainer" unique_id=308839440]
+layout_mode = 2
+
+[node name="nolabel" type="Label" parent="CanvasLayer/choiceUI/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=888494490]
+layout_mode = 2
+text = "いいえ"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=532758016]
+
+[node name="choiceUI" type="Control" parent="CanvasLayer2" unique_id=1882876020]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 493.0
+offset_top = 252.0
+offset_right = 533.0
+offset_bottom = 352.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/choiceUI" unique_id=446458598]
+layout_mode = 0
+offset_top = -56.0
+offset_right = 113.0
+offset_bottom = 50.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer2/choiceUI/VBoxContainer" unique_id=959255436]
+layout_mode = 2
+
+[node name="questionlabel2" type="Label" parent="CanvasLayer2/choiceUI/VBoxContainer/PanelContainer" unique_id=1922994132]
+layout_mode = 2
+text = "上の階に行きますか？"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/choiceUI/VBoxContainer" unique_id=1380633516]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer" unique_id=1110291291]
+layout_mode = 2
+
+[node name="yeslabel2" type="Label" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer/PanelContainer" unique_id=847923021]
+layout_mode = 2
+text = "はい"
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer" unique_id=1548079840]
+layout_mode = 2
+
+[node name="nolabel2" type="Label" parent="CanvasLayer2/choiceUI/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=2112373636]
+layout_mode = 2
+text = "いいえ"
+
+[node name="部屋１" type="Sprite2D" parent="." unique_id=353049107]
+z_index = -5
+position = Vector2(533, 319)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_2dhs7")
+
+[node name="部屋２" type="Sprite2D" parent="." unique_id=1611911713]
+z_index = -5
+position = Vector2(2639, 318)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_2dhs7")
+
+[node name="部屋３" type="Sprite2D" parent="." unique_id=2129921590]
+z_index = -5
+position = Vector2(3691, 318.00003)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_2dhs7")
+
+[node name="柵" type="Sprite2D" parent="." unique_id=1679351145]
+position = Vector2(552, 289.00012)
+scale = Vector2(0.15, 0.185)
+texture = ExtResource("11_j0lnp")
+
+[node name="柵2" type="Sprite2D" parent="." unique_id=74387220]
+position = Vector2(2636, 302.00003)
+scale = Vector2(0.15, 0.185)
+texture = ExtResource("11_j0lnp")
+
+[node name="柵3" type="Sprite2D" parent="." unique_id=418003530]
+position = Vector2(1600, 295)
+scale = Vector2(0.15, 0.185)
+texture = ExtResource("11_j0lnp")
+
+[node name="スクリーンショット20261013154709" type="Sprite2D" parent="." unique_id=1327614882]
+modulate = Color(0.7647059, 0.8039216, 0.39215687, 0.2784314)
+z_index = 1
+position = Vector2(2689.2502, 293.00006)
+scale = Vector2(5.0985246, 1.6992248)
+texture = ExtResource("12_ikkmg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=424398691]
+stream = ExtResource("13_pn5p7")
+autoplay = true
+
+[node name="部屋４" type="Sprite2D" parent="." unique_id=1541027099]
+z_index = -5
+position = Vector2(1586, 324)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_2dhs7")
+
+[node name="部屋5" type="Sprite2D" parent="." unique_id=1004003207]
+z_index = -5
+position = Vector2(4744, 319)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_2dhs7")
+
+[node name="柵4" type="Sprite2D" parent="." unique_id=1349565096]
+position = Vector2(3683.0002, 307.00003)
+scale = Vector2(0.15, 0.185)
+texture = ExtResource("11_j0lnp")
+
+[node name="柵5" type="Sprite2D" parent="." unique_id=625387052]
+position = Vector2(4738, 310)
+scale = Vector2(0.15, 0.185)
+texture = ExtResource("11_j0lnp")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
